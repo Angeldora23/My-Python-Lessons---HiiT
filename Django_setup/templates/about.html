@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> About page</title>
+</head>
+
+<body>
+    <h1> This is my about page</h1>
+    <p>{{ Pelumi }} </p>
+    <p>My name is {{ programmer_name }}</p>
+    <p>I am {{ programmer_age }} years old</p>
+    <p>I am a {{ programmer_class }} programmer</p>
+    <p>My favorite players are: {{ best_players|join:", " }}</p>
+    <p>The Greatest Of All Time is: {{ GOAT }}</p>
+
+    <h1>{{best_players}}</h1>
+    
+    {% for player in best_players %}
+    <p style="padding: 10px 100px;">{{ player }} {% if player == "Ororo" %}<span>GOAT</span>{% endif %}</p>
+    {% endfor %}
+
+
+    <a href="/">Home</a><br />
+    <a href="{% url 'about' %}">About</a>
+</body>
+
+</html>
