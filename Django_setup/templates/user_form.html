@@ -1,0 +1,30 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>User Form</title>
+        <link rel="stylesheet" href="{% static 'css/output.css' %}" />
+    </head>
+    <body>
+
+        <div class="grid h-screen w-full items-center justify-center">
+            <form action="{% url 'submit_form' %}" method="POST" class="grid items-start p-6 shadow-2xl w-80 max-w-125 gap-3 bg-white rounded-lg">
+                {% csrf_token %}
+
+                <input type="text" name="name" placeholder="Enter your name" required class="border p-2 rounded" />
+                <input type="text" name="department" placeholder="Enter your department" required class="border p-2 rounded" />
+                <button type="submit" class="bg-blue-600 text-white p-2 rounded">Submit</button>
+            </form>
+
+            {% if name %}
+                <div class="mt-4 p-4 bg-white rounded shadow">
+                    <p>Name: {{ name }}</p>
+                    <p>Department: {{ department }}</p>
+                </div>
+            {% endif %}
+        </div>
+
+    </body>
+</html>
