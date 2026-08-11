@@ -1,15 +1,15 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> My page</title>
+<title>My Page</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
-    <h1> Welcome to my page</h1>
-    <a href="/about">About Page</a>
-    <a href="{% url 'about' %}">About</a>
+    <h1>Welcome to my page</h1>
+    <a href="{% url 'about' %}">About Page</a>
 </body>
-
 </html>
